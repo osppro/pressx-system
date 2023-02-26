@@ -7,7 +7,7 @@ $dtime = date("Y-m-d H:i:s A", time());
 $now = date("Y-m-d H:i:s", time());
 $strtime = date("d-m-Y h:i:s A", time());
 $today = date("Y-m-d");
-defined ("APP_DIR") or define("APP_DIR","voting");
+defined ("APP_DIR") or define("APP_DIR","pressx");
 defined ("DB_URL") or define("DB_URL", $_SERVER['HTTP_HOST']);
 defined ("DS") or define("DS", DIRECTORY_SEPARATOR);
 defined ("BASE_URL") or define("BASE_URL", $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME']);
@@ -16,27 +16,27 @@ switch(DB_URL){
 		defined ("DB_SERVER") or define("DB_SERVER", 'localhost');
 		defined ("DB_USER") or define("DB_USER", "root");
 		defined ("DB_PASS") or define("DB_PASS", "");
-		defined ("DB_NAME") or define("DB_NAME", "");
-		defined ("SITE_URL") or define("SITE_URL", '');
-		defined ("HOME_URL") or define("HOME_URL", '');
+		defined ("DB_NAME") or define("DB_NAME", "pressx");
+		defined ("SITE_URL") or define("SITE_URL", "http://localhost/pressx");
+		defined ("HOME_URL") or define("HOME_URL", "http://localhost/pressx/users");
 	break;
 
-	case 'http://app.hamzpay.net': 
+	case 'production': 
 		defined ("DB_SERVER") or define("DB_SERVER", 'localhost');
-		defined ("DB_USER") or define("DB_USER", "hamspayc_hamspayc");
-		defined ("DB_PASS") or define("DB_PASS", "HamzDb2022?@$");
-		defined ("DB_NAME") or define("DB_NAME", "hamspayc_apidata");
-		defined ("SITE_URL") or define("SITE_URL", 'https://app.hamzpay.net');
-		defined ("HOME_URL") or define("HOME_URL", 'https://app.hamzpay.net/dashboard');
+		defined ("DB_USER") or define("DB_USER", "");
+		defined ("DB_PASS") or define("DB_PASS", "");
+		defined ("DB_NAME") or define("DB_NAME", "");
+		defined ("SITE_URL") or define("SITE_URL", "");
+		defined ("HOME_URL") or define("HOME_URL", '');
 	break;
 
 	default: 
 		defined ("DB_SERVER") or define("DB_SERVER", 'localhost');
-		defined ("DB_USER") or define("DB_USER", "hamspayc_hamspayc");
-		defined ("DB_PASS") or define("DB_PASS", "HamzDb2022?@$");
-		defined ("DB_NAME") or define("DB_NAME", "hamspayc_apidata");
-		defined ("SITE_URL") or define("SITE_URL", 'https://app.hamzpay.net');
-		defined ("HOME_URL") or define("HOME_URL", 'https://app.hamzpay.net/dashboard');
+		defined ("DB_USER") or define("DB_USER", "root");
+		defined ("DB_PASS") or define("DB_PASS", "");
+		defined ("DB_NAME") or define("DB_NAME", "pressx");
+		defined ("SITE_URL") or define("SITE_URL", "http:/localhost/pressx");
+		defined ("HOME_URL") or define("HOME_URL", "http://localhost/pressx/users");
 	}
 
  try{
