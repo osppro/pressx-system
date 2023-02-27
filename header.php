@@ -1,3 +1,4 @@
+<?php include 'root/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -11,7 +12,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <!-- Site Icons -->
-<link rel="shortcut icon" href="" type="image/x-icon" />
+<link rel="shortcut icon" href="uploads/logo.png" type="image/x-icon" />
 <link rel="apple-touch-icon" href="">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -47,7 +48,7 @@
                   <div class="col-md-6">
                      <div class="full">
                         <div class="logo">
-                           <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                           <a href="<?=SITE_URL;?>"><img src="images/logo.png" alt="#" /></a>
                         </div>
                      </div>
                   </div>
