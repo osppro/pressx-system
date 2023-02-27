@@ -1,9 +1,9 @@
 <?php include 'header.php'; ?>
 
-      <div class="inner-page-banner">
-         <div class="container">
-         </div>
+   <div class="inner-page-banner">
+      <div class="container">
       </div>
+   </div>
    </section>
    <section id="contant" class="contant main-heading" style="padding-bottom:0;margin-bottom:-1px;position:relative;z-index:1;">
       <div class="aboutus">
@@ -12,15 +12,15 @@
                <div class="col-md-12 col-sm-12">
                   <div class="col-md-7 col-sm-7 col-xs-12">
                      <div class="full">
-                        <h3>SPORTY LEAGUE HISTORY</h3>
-                        <p>Voluptate illum dolore ita ipsum, quid deserunt singulis, labore admodum ita multos malis ea nam nam tamen fore amet.
-                           Vidisse quid incurreret ut ut possumus transferrem si ita labore dolor si appellat, aut dolore doctrina. Commodo dolor 
-                           esse in magna, a a multos senserit nam si aliqua iis multos..
+                        <h3>Press X - Gaming services</h3>
+                        <p>Press X hires gaming tools to different Games across Uganda, the majority of people who use our tools are between age of 18 - 50. We welcome you all Gamers.<br>
+                           <strong>Includes:-</strong>
                         </p>
                         <ul class="icon-list">
-                           <li><i class="fa fa-angle-right"></i> Voluptate illum dolore ita ipsum</li>
-                           <li><i class="fa fa-angle-right"></i> Labore admodum ita multos malis ea nam nam tamen fore amet</li>
-                           <li><i class="fa fa-angle-right"></i> Voluptate illum dolore ita ipsum</li>
+                        <?php $games = $dbh->query("SELECT * FROM category LIMIT 5 ");
+                        while ($ro = $games->fetch(PDO::FETCH_OBJ)) { ?>
+                           <li><i class="fa fa-angle-right"></i><?=$ro->cat_name; ?></li>
+                        <?php } ?>
                         </ul>
                      </div>
                   </div>
@@ -31,8 +31,9 @@
             </div>
          </div>
       </div>
+
       <div class="dark-section" style="background:url(images/walle.jpg)">
-         <div class="container">
+         <div class="container" style="display: none;">
             <div class="row">
                <div class="col-md-12 col-sm-12">
                   <div class="heading-main">
