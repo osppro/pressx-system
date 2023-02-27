@@ -132,11 +132,11 @@
                       <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?=$rows->pname ?></strong></td>
                       <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?=$rows->pprice ?></strong></td>
                       <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
-                      <img src="<?=$rows->pfront; ?>"> </td>
+                      <img style="width: 120px; " src="<?=$rows->pfront; ?>"> </td>
                       <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
-                      <img src="<?=$rows->pback; ?>"> </td>
+                      <img style="width: 120px; " src="<?=$rows->pback; ?>"> </td>
                       <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
-                      <img src="<?=$rows->pside; ?>"> </td>
+                      <img style="width: 120px; " src="<?=$rows->pside; ?>"> </td>
                       <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?=$rows->pqnty ?></strong></td>
                       <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?=$rows->pdesc ?></strong></td>
                     </tr>

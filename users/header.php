@@ -23,7 +23,7 @@
         window.location = '".HOME_URL."?view-category';
         </script>";
       }
-    }elseif (isset($_POST[''])) {
+    }elseif (isset($_POST['add_new_product_btn'])) {
       trim(extract($_POST));
        $filename = trim($_FILES['pfront']['name']);
        $chk = rand(111111111,999999999);
@@ -31,12 +31,32 @@
        $pfront = $chk.$ext;
        $target_pfront = "../uploads/".$pfront;
 
+       $filename1 = trim($_FILES['pback']['name']);
+       $chk1 = rand(111111111123,999999999123);
+       $ext1 = strrchr($filename1, ".");
+       $pback = $chk.$ext1;
+       $target_pback = "../uploads/".$pback;
+
+       $filename2 = trim($_FILES['pside']['name']);
+       $chk1 = rand(1111111111234,9999999991234);
+       $ext1 = strrchr($filename2, ".");
+       $pside = $chk.$ext1;
+       $target_pside = "../uploads/".$pside;
+
       // `pid`, `cat_id`, `pname`, `pprice`, `pfront`, `pback`, `pside`, `pqnty`, `pdesc`, `pdate_added`
-      $pdts = $dbh->query("INSERT INTO products VALUES(NULL,'$cat_id', '$pname','$pprice','$pfront','$pback','$pside','$pqnty','$today') ");
-        if ($cat) {
+       $pfront_url = SITE_URL.'/uploads/'.$pfront;
+       $pback_url = SITE_URL.'/uploads/'.$pback;
+       $pside_url = SITE_URL.'/uploads/'.$pside;
+      $pdts = $dbh->query("INSERT INTO products VALUES(NULL,'$cat_id', '$pname','$pprice','$pfront_url','$pback_url','$pside_url','$pqnty','$pdesc','$today') ");
+       if (move_uploaded_file($_FILES['pback']['tmp_name'], $target_pfront) && move_uploaded_file($_FILES['pfront']['tmp_name'], $target_pback) && move_uploaded_file($_FILES['pside']['tmp_name'], $target_pside)) {
+      $msg ="Image uploaded Successfully";
+        }else{
+          $msg ="There was a problem uploading image";
+        }
+        if ($pdts) {
           echo "<script>
-          alert('Category added sucessful');
-          window.location = '".HOME_URL."?view-category';
+          alert('Products added sucessful');
+          window.location = '".HOME_URL."?products';
           </script>";
           }
     }

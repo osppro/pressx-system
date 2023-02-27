@@ -76,7 +76,7 @@
                   <a href="" class="typewrite" data-period="2000" data-type='[ "Contrary to popular belief, Lorem Ipsum is not simply random text.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."]'>
                   <span class="wrap"></span>
                   </a>
-                  </h1	   
+                  </h1>   
                   <span class="wrap"></span>
                   </a>
                </div>
@@ -151,11 +151,13 @@
                if ($products->rowCount() > 0) { 
                   while($rows = $products->fetch(PDO::FETCH_OBJ)){ ?>
                   <div class="news-post-widget">
-                     <img class="img-responsive" src="uploads/<?=$rows->pfront; ?>" alt="">
+                     <h2><?=$rows->cat_name; ?></h2>
+                     <img class="img-responsive" style="width: 150px;" src="<?=$rows->pfront; ?>" alt="">
                      <div class="news-post-detail">
                         <span class="date"><?=date('jS F, Y', strtotime($rows->pdate_added)); ?></span>
-                        <h2><a href="blog-detail.html"><?=$rows->pname; ?></a></h2>
+                        <h2><a href="blog-detail"><?=$rows->pname; ?></a></h2>
                         <p><?=$rows->pdesc?></p>
+                        <strong> Order Now: <span style="color: green;">0758420206</span></strong>
                      </div>
                   </div>
                <?php }}else{ ?>
