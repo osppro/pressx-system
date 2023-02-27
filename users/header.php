@@ -23,7 +23,32 @@
         window.location = '".HOME_URL."?view-category';
         </script>";
       }
+    }elseif (isset($_POST[''])) {
+      trim(extract($_POST));
+       $filename = trim($_FILES['pfront']['name']);
+       $chk = rand(111111111,999999999);
+       $ext = strrchr($filename, ".");
+       $pfront = $chk.$ext;
+       $target_pfront = "../uploads/".$pfront;
+
+      // `pid`, `cat_id`, `pname`, `pprice`, `pfront`, `pback`, `pside`, `pqnty`, `pdesc`, `pdate_added`
+      $pdts = $dbh->query("INSERT INTO products VALUES(NULL,'$cat_id', '$pname','$pprice','$pfront','$pback','$pside','$pqnty','$today') ");
+        if ($cat) {
+          echo "<script>
+          alert('Category added sucessful');
+          window.location = '".HOME_URL."?view-category';
+          </script>";
+          }
     }
+
+
+
+
+
+
+
+
+
   }
 
  ?>
