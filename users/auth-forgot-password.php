@@ -8,14 +8,14 @@
   dir="ltr"
   data-theme="theme-default"
   data-assets-path="assets/"
-  data-template="kwagala-forgot-password">
+  data-template="pressx-forgot-password">
   <head>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
-    <title>Forgot Password | kwagala-forgot-password</title>
+    <title>Forgot Password | pressx-forgot-password</title>
     <meta name="description" content="" />
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
@@ -41,10 +41,8 @@
     <script src="assets/vendor/js/helpers.js"></script>
     <script src="assets/js/config.js"></script>
   </head>
-
   <body>
     <!-- Content -->
-
     <div class="container-xxl">
       <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner py-4">
@@ -56,11 +54,11 @@
               <div class="app-brand justify-content-center">
                 <a href="<?=SITE_URL; ?>" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
-                    <img src="../assets/images/kwagala.jpg" style="width: 100%; padding: 10px;">
+                    <img src="../uploads/logoo.png" style="width: 100%; padding: 10px;">
                   </span>
                 </a>
               </div>
-
+              
               <!-- /Logo -->
               <h4 class="mb-2">Forgot Password? 🔒</h4>
               <p class="mb-4">Enter your email and we'll send you instructions to reset your password</p>
