@@ -4,10 +4,11 @@
   if (empty($_SESSION['userid'])) {
     header("Location: auth-login");
   }else{
-    //`userid`, `fullname`, `email`, `u_type`, `u_status`, `password`, `date_registered`, `terms`
+    //`userid`, `name`, `email`, `phone`, `password`, `u_type`, `date_registered`
     $interface = $_SESSION['u_type'];
-    $fullname   = $_SESSION['fullname'];
+    $name   = $_SESSION['name'];
     $email = $_SESSION['email'];
+    $phone = $_SESSION['phone'];
     $userid = $_SESSION['userid'];
     $u_status = $_SESSION['u_status'];
     $date_registered = $_SESSION['date_registered'];

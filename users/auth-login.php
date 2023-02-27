@@ -16,10 +16,10 @@ require_once '../root/config.php';
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
-    <title>Login | Kwagala Orphanage</title>
+    <title>Login | press X - Gaming</title>
     <meta name="description" content="" />
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/images/kwagala.jpg" />
+    <link rel="icon" type="image/x-icon" href="../uploads/logo.png" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -55,16 +55,16 @@ require_once '../root/config.php';
               <div class="app-brand justify-content-center">
                 <a href="<?=SITE_URL; ?>" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
-                    <img src="../assets/images/kwagala.jpg" style="width: 100%; padding: 10px;">
+                    <img src="../uploads/logoo.png" style="width: 100%; padding: 10px;">
                   </span>
                 </a>
               </div>
 
               <!-- /Logo -->
-              <h4 class="mb-2">Welcome to Kwagala Orphanage! 👋</h4>
+              <h4 class="mb-2">Welcome to Press X! 👋</h4>
               <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
-              <form id="formAuthentication" class="mb-3" action="../action" method="POST">
+              <form id="formAuthentication" class="mb-3" action="" method="POST">
                 <div class="mb-3">
                   <label for="email" class="form-label">Email Address</label>
                   <input

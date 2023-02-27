@@ -15,10 +15,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
-    <title>Register - Pro</title>
+    <title>Register | Press X</title>
     <meta name="description" content="" />
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/images/kwagala.jpg" />
+    <link rel="icon" type="image/x-icon" href="../uploads/logo.png" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -53,7 +53,7 @@
               <div class="app-brand justify-content-center">
                 <a href="<?=SITE_URL; ?>" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
-                    <img src="../assets/images/kwagala.jpg" style="width: 100%; padding: 10px;">
+                    <img src="../uploads/logoo.png" style="width: 100%; padding: 10px;">
                   </span>
                 </a>
               </div>
@@ -82,6 +82,17 @@
                   id="email" 
                   name="email" 
                   placeholder="Enter your email" 
+                  required 
+                  />
+                </div>
+                 <div class="mb-3">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input 
+                  type="text" 
+                  class="form-control" 
+                  id="phone" 
+                  name="phone" 
+                  placeholder="Enter your Phone Number" 
                   required 
                   />
                 </div>
