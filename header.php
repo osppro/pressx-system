@@ -65,11 +65,11 @@
                         <!-- button section -->
                         <ul class="login">
                            <li class="login-modal">
-                              <a href="#" class="login"><i class="fa fa-user"></i>Login</a>
+                              <a href="users/auth-login" class="login"><i class="fa fa-user"></i>Login</a>
                            </li>
                            <li>
                               <div class="cart-option">
-                                 <a href="#"><i class="fa fa-shopping-cart"></i>Register</a>
+                                 <a href="users/auth-register"><i class="fa fa-shopping-cart"></i>Register</a>
                               </div>
                            </li>
                         </ul>
