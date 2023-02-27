@@ -124,12 +124,12 @@ rel="stylesheet"/>
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-cube-alt"></i>
-        <div data-i18n="Misc">Events</div>
+        <div data-i18n="Misc">Orders</div>
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
-          <a href="?events" class="menu-link">
-            <div data-i18n="Error">View Events</div>
+          <a href="?orders" class="menu-link">
+            <div data-i18n="Error">View Orders</div>
           </a>
         </li>
       </ul>
@@ -139,40 +139,7 @@ rel="stylesheet"/>
     <li class="menu-item">
       <a href="?donations" class="menu-link">
         <i class="menu-icon tf-icons bx bx-dollar"></i>
-        <div data-i18n="Basic">Donations</div>
-      </a>
-    </li>
-    <!-- User interface -->
-    <li class="menu-item">
-      <a href="javascript:void(0)" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-box"></i>
-        <div data-i18n="User interface">Testimonials</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="menu-item">
-          <a href="?view-testimonies" class="menu-link">
-            <div data-i18n="Accordion">View Testimonies</div>
-          </a>
-        </li>
-      </ul>
-    </li>
-    <li class="menu-item">
-      <a href="javascript:void(0)" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-file"></i>
-        <div data-i18n="User interface">Blog Posts</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="menu-item">
-          <a href="?view-blog-posts" class="menu-link">
-            <div data-i18n="Accordion">View Blog Posts</div>
-          </a>
-        </li>
-      </ul>
-    </li>
-    <li class="menu-item">
-      <a href="?teams" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-user"></i>
-        <div data-i18n="Basic">Teams</div>
+        <div data-i18n="Basic">Customers</div>
       </a>
     </li>
   <?php }else{ ?>
@@ -185,14 +152,14 @@ rel="stylesheet"/>
   <?php } ?> 
 
     <!-- Misc -->
-    <li class="menu-item">
+<!--     <li class="menu-item">
       <a href=""
         class="menu-link">
         <i class="menu-icon tf-icons bx bx-support"></i>
         <div data-i18n="Support">Support</div>
       </a>
     </li>
-
+ -->
 <li class="menu-item">
       <a href="../logout"
         class="menu-link">
