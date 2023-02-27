@@ -48,7 +48,7 @@
                   <div class="col-md-6">
                      <div class="full">
                         <div class="logo">
-                           <a href="<?=SITE_URL;?>"><img src="images/logo.png" alt="#" /></a>
+                           <a href="<?=SITE_URL;?>"><img src="uploads/logo.png" alt="#" /></a>
                         </div>
                      </div>
                   </div>
@@ -96,10 +96,10 @@
                                  </div>
                                  <div class="collapse navbar-collapse js-navbar-collapse">
                                     <ul class="nav navbar-nav">
-                                       <li class="active"><a href="index.html">Home</a></li>
-                                       <li><a href="about.html">About</a></li>
-                                       <li><a href="team.html">Team</a></li>
-                                       <li><a href="news.html">News</a></li>
+                                       <li class="active"><a href="index">Home</a></li>
+                                       <li><a href="about">About</a></li>
+                                       <li><a href="team">Team</a></li>
+                                       <li><a href="news">News</a></li>
                                        <li class="dropdown mega-dropdown">
                                           <a href="match" class="dropdown-toggle" data-toggle="dropdown">Match<span class="caret"></span></a>				
                                           <ul class="dropdown-menu mega-dropdown-menu">
@@ -150,8 +150,8 @@
                                              </li>
                                           </ul>
                                        </li>
-                                       <li><a href="blog.html">Blog</a></li>
-                                       <li><a href="contact.html">contact</a></li>
+                                       <li><a href="blog">Blog</a></li>
+                                       <li><a href="contact">contact</a></li>
                                     </ul>
                                  </div>
                                  <!-- /.nav-collapse -->
