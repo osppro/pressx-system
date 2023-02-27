@@ -55,7 +55,7 @@
    </div>
    <div class="footer-bottom">
       <div class="container">
-         <p>Copyright © 2018 Distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
+         <p>Copyright © <?=date('Y'); ?> Distributed by <a href="<?=SITE_URL; ?>">Press X</a></p>
       </div>
    </div>
 </footer>
