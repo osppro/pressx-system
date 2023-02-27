@@ -153,9 +153,9 @@
                   <div class="news-post-widget">
                      <img class="img-responsive" src="uploads/<?=$rows->pfront; ?>" alt="">
                      <div class="news-post-detail">
-                        <span class="date">20 march 2016</span>
-                        <h2><a href="blog-detail.html">At vero eos et accusamus et iusto odio dignissimos ducimus</a></h2>
-                        <p>Just hours after that his grandma had died, Angel Di Maria imagined how she might react if he didn't play</p>
+                        <span class="date"><?=date('jS F, Y', strtotime($rows->pdate_added)); ?></span>
+                        <h2><a href="blog-detail.html"><?=$rows->pname; ?></a></h2>
+                        <p><?=$rows->pdesc?></p>
                      </div>
                   </div>
                <?php }}else{ ?>
