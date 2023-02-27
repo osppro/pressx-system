@@ -1,5 +1,33 @@
 <?php 
   require_once '../root/config.php';  
+  // `userid`, `name`, `email`, `phone`, `password`, `u_type`, `date_registered`
+  if (isset($_POST['register'])) {
+    trim(extract($_POST));
+      // `userid`, `email`, `fullname`, `u_type`, `password`, `date_registered`
+      $check = $dbh->query("SELECT email FROM users WHERE (email = '$email') ")->fetchColumn();
+    if(!$check){
+      $password = md5($password);
+      $sql = "INSERT INTO users VALUES(NULL,'$name','$email','$phone','$password','user','$today')";
+      $result = dbCreate($sql);
+      if($result == 1){
+          echo "<script>
+              alert('Registration is Successful');
+              window.location = '".HOME_URL."';
+              </script>";
+      }else{
+          echo "<script>
+            alert('User registration failed');
+            window.location = '".HOME_URL."/auth-register';
+            </script>";
+      }
+   }else{
+        echo "<script>
+          alert('Username already registered');
+          window.location = '".HOME_URL."/auth-register';
+          </script>";
+      }
+
+  }
 ?>
 <!DOCTYPE html>
 <html
@@ -68,7 +96,7 @@
                     type="text"
                     class="form-control"
                     id="username"
-                    name="fullname"
+                    name="name"
                     placeholder="Enter your Fullname"
                     autofocus
                     required
