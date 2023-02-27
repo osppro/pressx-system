@@ -5,7 +5,7 @@
             <div class="full">
                <div class="footer-widget">
                   <div class="footer-logo">
-                     <a href="#"><img src="images/footer-logo.png" alt="#" /></a>
+                     <a href="<??=SITE_URL; ?>"><img src="uploads/logo.png" alt="#" /></a>
                   </div>
                   <p>Most of our events have hard and easy route choices as we are always keen to encourage new riders.</p>
                   <ul class="social-icons style-4 pull-left">
@@ -22,12 +22,12 @@
                <div class="footer-widget">
                   <h3>Menu</h3>
                   <ul class="footer-menu">
-                     <li><a href="about.html">About Us</a></li>
-                     <li><a href="team.html">Our Team</a></li>
-                     <li><a href="news.html">Latest News</a></li>
-                     <li><a href="matche.html">Recent Matchs</a></li>
-                     <li><a href="blog.html">Our Blog</a></li>
-                     <li><a href="contact.html">Contact Us</a></li>
+                     <li><a href="about">About Us</a></li>
+                     <li><a href="team">Our Team</a></li>
+                     <li><a href="news">Latest News</a></li>
+                     <li><a href="matche">Recent Matchs</a></li>
+                     <li><a href="blog">Our Blog</a></li>
+                     <li><a href="contact">Contact Us</a></li>
                   </ul>
                </div>
             </div>
