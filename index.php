@@ -147,32 +147,22 @@
             </div>
             <div class="col-lg-8 col-sm-8 col-xs-12">
                <div class="news-post-holder">
+               <?php $products = $dbh->query("SELECT * FROM category c, products p WHERE c.cat_id = p.cat_id ");
+               if ($products->rowCount() > 0) { 
+                  while($rows = $products->fetch(PDO::FETCH_OBJ)){ ?>
                   <div class="news-post-widget">
-                     <img class="img-responsive" src="images/img-01_002.jpg" alt="">
+                     <img class="img-responsive" src="uploads/<?=$rows->pfront; ?>" alt="">
                      <div class="news-post-detail">
                         <span class="date">20 march 2016</span>
                         <h2><a href="blog-detail.html">At vero eos et accusamus et iusto odio dignissimos ducimus</a></h2>
                         <p>Just hours after that his grandma had died, Angel Di Maria imagined how she might react if he didn't play</p>
                      </div>
                   </div>
-                  <div class="news-post-widget">
-                     <img class="img-responsive" src="images/img-02_003.jpg" alt="">
-                     <div class="news-post-detail">
-                        <span class="date">20 march 2016</span>
-                        <h2><a href="blog-detail.html">At vero eos et accusamus et iusto odio dignissimos ducimus</a></h2>
-                        <p>Just hours after that his grandma had died, Angel Di Maria imagined how she might react if he didn't play</p>
-                     </div>
+               <?php }}else{ ?>
+                  <div class="">
+                     <h2 class="alert alert-danger text-center">No Product Found.</h2>
                   </div>
-               </div>
-               <div class="news-post-holder">
-                  <div class="news-post-widget">
-                     <img class="img-responsive" src="images/img-03_003.jpg" alt="">
-                     <div class="news-post-detail">
-                        <span class="date">20 march 2016</span>
-                        <h2><a href="blog-detail.html">At vero eos et accusamus et iusto odio dignissimos ducimus</a></h2>
-                        <p>Just hours after that his grandma had died, Angel Di Maria imagined how she might react if he didn't play</p>
-                     </div>
-                  </div>
+                <?php } ?>
                </div>
             </div>
          </div>
