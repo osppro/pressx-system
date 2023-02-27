@@ -20,10 +20,9 @@
                     <th>No(#)</th>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Phone</th>
                     <th>Type</th>
-                    <th>Status</th>
                     <th>Date</th>
-                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
@@ -31,19 +30,19 @@
                 $users = $dbh->query("SELECT * FROM users ");
                 $x = 1;
                   while ($rows = $users->fetch(PDO::FETCH_OBJ)) { ?>
-                  <!-- `userid`, `name`, `email`, `password`, `u_type`, `u_status`, `date_registered` -->
+                  <!-- `userid`, `name`, `email`, `phone`, `password`, `u_type`, `date_registered` -->
                     <tr>
                       <td><?=$x++; ?></td>
-                      <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?=$rows->fullname ?></strong></td>
+                      <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?=$rows->name ?></strong></td>
                       <td><?=$rows->email ?></td>
-                      <td><?=$rows->u_type ?></td>
-                      <?php if ($rows->u_status ==1) { ?>
-                        <td><span class="badge bg-label-primary me-1">Active</span></td>
+                      <td><?=$rows->phone ?></td>
+                      <?php if ($rows->u_type =='admin') { ?>
+                        <td><span class="badge bg-label-success me-1">Admin</span></td>
                       <?php }else{ ?>
-                        <td><span class="badge bg-label-danger me-1">Inactive</span></td>
+                        <td><span class="badge bg-label-primary me-1">Customer</span></td>
                       <?php } ?>
                       <td><?=date('jS - F, Y', strtotime($rows->date_registered)) ?></td>
-                      <td>
+                     <!--  <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                             <i class="bx bx-dots-vertical-rounded"></i>
@@ -57,7 +56,7 @@
                             >
                           </div>
                         </div>
-                      </td>
+                      </td> -->
                     </tr>
                 <?php } ?>
 
@@ -393,7 +392,7 @@
                         <i class="bx bx-dots-vertical-rounded"></i>
                       </button>
                       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                        <a class="dropdown-item" href="javascript:void(0);">Make Donation</a>
+                        <a class="dropdown-item" href="javascript:void(0);">Categories</a>
                       </div>
                     </div>
                   </div>
@@ -401,15 +400,13 @@
                   <?php if ($interface == 'admin') { 
                     $total_category = $dbh->query("SELECT * FROM category ")->rowCount();
                     ?>
-                    <h3 class="card-title mb-2">$ <?=$total_category; ?></h3>
-                    <small class="text-success fw-semibold"> Total Donations</small>
+                    <h3 class="card-title mb-2"><?=$total_category; ?></h3>
                   <?php }elseif ($interface == 'user') { 
-                    $personal_donation = $dbh->query("SELECT * FROM personal_donations WHERE userid = '$userid' AND pd_status = 'DONATED' ")->rowCount();
+                    $prodts = $dbh->query("SELECT * FROM category ")->rowCount();
                     ?>
-                    <h3 class="card-title mb-2">$ <?=$personal_donation; ?></h3>
-                    <small class="text-success fw-semibold">My Donations </small>
+                    <h3 class="card-title mb-2"><?=$prodts; ?></h3>
+                    <small class="text-success fw-semibold">Category </small>
                     <hr>
-                  <a href="" class="btn btn-success">Make Donation</a>
                   <?php } ?>
                 </div>
               </div>
