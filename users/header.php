@@ -10,7 +10,6 @@
     $email = $_SESSION['email'];
     $phone = $_SESSION['phone'];
     $userid = $_SESSION['userid'];
-    $u_status = $_SESSION['u_status'];
     $date_registered = $_SESSION['date_registered'];
   }
  ?>

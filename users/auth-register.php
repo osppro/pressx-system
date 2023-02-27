@@ -12,7 +12,7 @@
       if($result == 1){
           echo "<script>
               alert('Registration is Successful');
-              window.location = '".HOME_URL."';
+              window.location = '".HOME_URL."/auth-login';
               </script>";
       }else{
           echo "<script>

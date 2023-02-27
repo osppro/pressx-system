@@ -1,5 +1,40 @@
 <?php 
 require_once '../root/config.php'; 
+if (isset($_POST['login'])) {
+  trim(extract($_POST));
+  $email = $_POST['email']; 
+   $password = md5($password);
+  $result = $con->query("SELECT * FROM users WHERE (email = '$email') AND password='$password'");
+  if ($result->num_rows == 1) {
+    $row = $result->fetch_assoc();
+    // `userid`, `name`, `email`, `phone`, `password`, `u_type`, `date_registered`
+    $_SESSION['userid'] = $row['userid'];
+    $_SESSION['email'] = $row['email'];
+    $_SESSION['name'] = $row['name'];
+    $_SESSION['phone'] = $row['phone'];
+    $_SESSION['u_type'] = $row['u_type'];
+    $_SESSION['date_registered'] = $row['date_registered'];
+    //=========================================================
+    if ($result->num_rows > 0) {
+      echo "<script>
+        // alert('Login is Successful');
+        window.location = '".HOME_URL."';
+        </script>";
+      }else{
+        echo "<script>
+        alert('Login failed, please check your login details again');
+        window.location = '".HOME_URL."/auth-login';
+        </script>";
+      }
+
+  }else{
+    echo "<script>
+      alert('Wrong username or password');
+      window.location = '".HOME_URL."/auth-login';
+      </script>";
+  }
+}
+
 ?>
 <!DOCTYPE html>
 <html
@@ -59,7 +94,6 @@ require_once '../root/config.php';
                   </span>
                 </a>
               </div>
-
               <!-- /Logo -->
               <h4 class="mb-2">Welcome to Press X! 👋</h4>
               <p class="mb-4">Please sign-in to your account and start the adventure</p>
@@ -101,7 +135,6 @@ require_once '../root/config.php';
                   <button class="btn btn-primary d-grid w-100" name="login" type="submit">Sign in</button>
                 </div>
               </form>
-
               <p class="text-center">
                 <span>New on our platform?</span>
                 <a href="auth-register">
