@@ -89,7 +89,7 @@
               <h4 class="mb-2">Adventure starts Here.</h4>
               <p class="mb-4">Fill up the form below to become a member !</p>
 
-              <form id="formAuthentication" class="mb-3" action="../action" method="POST">
+              <form id="formAuthentication" class="mb-3" action="" method="POST">
                 <div class="mb-3">
                   <label for="username" class="form-label">Fullname</label>
                   <input
