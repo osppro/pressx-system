@@ -96,7 +96,7 @@
                                  </div>
                                  <div class="collapse navbar-collapse js-navbar-collapse">
                                     <ul class="nav navbar-nav">
-                                       <li class="active"><a href="index">Home</a></li>
+                                       <li class="active"><a href="<?=SITE_URL; ?>">Home</a></li>
                                        <li><a href="about">About</a></li>
                                        <li><a href="team">Team</a></li>
                                        <li><a href="news">News</a></li>
