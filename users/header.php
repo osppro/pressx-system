@@ -25,9 +25,8 @@ data-template="vertical-menu-template-free">
 <meta charset="utf-8" />
 <meta
 name="viewport"
-content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
-/>
-<title>Dashboard - Kwagala Orphanage</title>
+content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+<title>Dashboard - press X</title>
 <meta name="description" content="" />
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="../assets/images/kwagala.jpg" />
@@ -61,14 +60,13 @@ rel="stylesheet"/>
   <div class="app-brand demo">
     <a href="<?=HOME_URL; ?>" class="app-brand-link">
       <span class="app-brand-logo demo">
-        <img src="../assets/images/kwagala.jpg" style="width: 50%; padding: 10px;">
+        <img src="../uploads/logoo.png" style="width: 50%; padding: 10px;">
       </span>
     </a>
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
       <i class="bx bx-chevron-left bx-sm align-middle"></i>
     </a>
   </div>
-
   <div class="menu-inner-shadow"></div>
   <ul class="menu-inner py-1">
     <!-- Dashboard -->
@@ -125,6 +123,7 @@ rel="stylesheet"/>
         </li>
       </ul>
     </li>
+
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-cube-alt"></i>
@@ -179,7 +178,6 @@ rel="stylesheet"/>
         <div data-i18n="Basic">Teams</div>
       </a>
     </li>
-
   <?php }else{ ?>
     <li class="menu-item">
       <a href="?donations" class="menu-link">
@@ -187,7 +185,6 @@ rel="stylesheet"/>
         <div data-i18n="Basic">Donations</div>
       </a>
     </li>
-
   <?php } ?> 
 
     <!-- Misc -->
@@ -268,7 +265,7 @@ rel="stylesheet"/>
                     </div>
                   </div>
                   <div class="flex-grow-1">
-                    <span class="fw-semibold d-block"><?=$_SESSION['fullname']; ?></span>
+                    <span class="fw-semibold d-block"><?=$_SESSION['name']; ?></span>
                     <small class="text-muted"><?=@$interface ?></small>
                   </div>
                 </div>
@@ -306,9 +303,9 @@ rel="stylesheet"/>
   </nav>
   <!-- / Navbar -->
 <?php 
-   include 'add-banner.php'; 
-   include 'add-cause.php';
-   include 'add-category.php';
-   include 'add-team.php';
-   include 'add-blog.php';
+   // include 'add-banner.php'; 
+   // include 'add-cause.php';
+   // include 'add-category.php';
+   // include 'add-team.php';
+   // include 'add-blog.php';
 ?>

@@ -338,13 +338,12 @@
        <?php }elseif (isset($_REQUEST[''])) { ?>
          
         <?php }else{ ?>
-
         <div class="col-lg-8 mb-4 order-0">
           <div class="card">
             <div class="d-flex align-items-end row">
               <div class="col-sm-7">
                 <div class="card-body">
-                  <h5 class="card-title text-primary">Welcome <?=ucwords($fullname); ?>!</h5>
+                  <h5 class="card-title text-primary">Welcome <?=ucwords($name); ?>!</h5>
                   <p class="mb-4">
                     You have done well visiting your Dashboard today !<br>
                     For any assistance, contact us on. <br>
@@ -398,11 +397,11 @@
                       </div>
                     </div>
                   </div>
-                  <span class="fw-semibold d-block mb-1">Donations</span>
+                  <span class="fw-semibold d-block mb-1">Categories</span>
                   <?php if ($interface == 'admin') { 
-                    $total_donation = $dbh->query("SELECT * FROM personal_donations WHERE userid = '$userid' AND pd_status = 'DONATED' ")->rowCount();
+                    $total_category = $dbh->query("SELECT * FROM category ")->rowCount();
                     ?>
-                    <h3 class="card-title mb-2">$ <?=$total_donation; ?></h3>
+                    <h3 class="card-title mb-2">$ <?=$total_category; ?></h3>
                     <small class="text-success fw-semibold"> Total Donations</small>
                   <?php }elseif ($interface == 'user') { 
                     $personal_donation = $dbh->query("SELECT * FROM personal_donations WHERE userid = '$userid' AND pd_status = 'DONATED' ")->rowCount();
@@ -443,7 +442,7 @@
             <div class="d-flex align-items-end row">
               <div class="col-sm-7">
                 <div class="card-body">
-                  <h5 class="card-title text-primary">Welcome <?=ucwords($fullname); ?>!</h5>
+                  <h5 class="card-title text-primary">Welcome <?=ucwords($name); ?>!</h5>
                   <p class="mb-4">
                     You have done well visiting your Dashboard today !<br>
                     For any assistance, contact us on. <br>
