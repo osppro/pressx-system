@@ -96,12 +96,12 @@ rel="stylesheet"/>
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
-        <div data-i18n="Account Settings">Banners</div>
+        <div data-i18n="Account Settings">Category</div>
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
           <a href="?view-banners" class="menu-link">
-            <div data-i18n="Notifications">View Banners</div>
+            <div data-i18n="Notifications">View Categories</div>
           </a>
         </li>
       </ul>
@@ -110,15 +110,12 @@ rel="stylesheet"/>
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-        <div data-i18n="Authentications">Causes</div>
+        <div data-i18n="Authentications">Products</div>
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
           <a href="?category" class="menu-link">
-            <div data-i18n="Basic">View Category</div>
-          </a>
-          <a href="?cause" class="menu-link">
-            <div data-i18n="Basic">View Causes</div>
+            <div data-i18n="Basic">View Products</div>
           </a>
         </li>
       </ul>
