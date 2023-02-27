@@ -416,12 +416,56 @@
 
       <?php } ?>
 
-
     <?php }elseif ($interface == 'user') { 
 
-      if (isset($_REQUEST[''])) { ?>
-    
-
+      if (isset($_REQUEST['orders'])) { ?>
+         <div class="container-xxl flex-grow-1 container-p-y">
+          <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Orders</span></h4>
+          <!-- Basic Bootstrap Table -->
+          <div class="card">
+            <h5 class="card-header">My Orders</h5>
+            <div class="table-responsive text-nowrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>No(#)</th>
+                    <th>Product</th>
+                    <th>Qnty</th>
+                    <th>Days</th>
+                    <th>Fullname</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>payment</th>
+                    <th>Date Ordered</th>
+                  </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                <?php 
+                $userid = $_SESSION['userid'];
+                $blog = $dbh->query("SELECT * FROM products p, category c, orders o WHERE p.pid = o.pid AND c.cat_id = o.cat_id AND o.userid = '$userid' ");
+                $x = 1;
+                if ($blog->rowCount() > 0 ) {
+                  while ($rows = $blog->fetch(PDO::FETCH_OBJ)) { ?>
+                  <!--`order_id`, `userid`, `pid`, `cat_id`, `qnty`, `days`, `fullname`, `phone`, `email`, `address`, `payment_mode`, `date_ordered` -->
+                    <tr>
+                      <td><?=$x++; ?></td>
+                      <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?=$rows->pname ?></strong></td>
+                      <td><?=$rows->qnty ?></td>
+                      <td><?=$rows->days ?></td>
+                      <td><?=$rows->fullname ?></td>
+                      <td><?=$rows->phone ?></td>
+                      <td><?=$rows->address ?></td>
+                      <td><?=$rows->payment_mode ?></td>
+                      <td><?=$rows->date_ordered ?></td>
+                    </tr>
+                <?php }}else{ ?>
+                  <h4 class="alert alert-danger text-center">No Orders Made Yet !.</h4>
+               <?php } ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
     <?php }elseif (isset($_REQUEST[''])) { ?>
 
     <?php }elseif (isset($_REQUEST[''])) { ?>
@@ -443,8 +487,7 @@
                   <p class="mb-4">
                     You have done well visiting your Dashboard today !<br>
                     For any assistance, contact us on. <br>
-                    <a href="tel:+256782422208">+256 782 422208</a>
-                    <!-- <a href="tel:+256775550528">+256-775-550-528</a>, <a href="tel:+256756765431">+256-756-765-431</a> -->
+                    <a href="tel:+256758420206">+256 758 420 206</a>
                   </p>
                   <a class="btn btn-primary" style="text-decoration: none; color: white;"><?=date('jS - F, Y', strtotime($today)); ?></a>
                 </div>
@@ -489,18 +532,17 @@
                         <i class="bx bx-dots-vertical-rounded"></i>
                       </button>
                       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                        <a class="dropdown-item" href="javascript:void(0);">Make Donation</a>
+                        <a class="dropdown-item" href="javascript:void(0);">Total Categories</a>
                       </div>
                     </div>
                   </div>
-                  <span class="fw-semibold d-block mb-1">Donations</span>
+                  <span class="fw-semibold d-block mb-1">My Orders</span>
                   <?php 
-                    $personal_donation = $dbh->query("SELECT * FROM personal_donations WHERE userid = '$userid' AND pd_status = 'DONATED' ")->rowCount();
+                   $userid = $_SESSION['userid'];
+                  $orders = $dbh->query("SELECT * FROM products p, category c, orders o WHERE p.pid = o.pid AND c.cat_id = o.cat_id AND o.userid = '$userid' ")->rowCount(); 
                     ?>
-                    <h3 class="card-title mb-2">$ <?=$personal_donation; ?></h3>
-                    <small class="text-success fw-semibold">My Donations </small>
+                    <h3 class="card-title mb-2"><?=$orders; ?></h3>
                     <hr>
-                  <a href="" class="btn btn-success">Make Donation</a>
                 </div>
               </div>
             </div>

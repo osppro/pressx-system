@@ -137,16 +137,16 @@ rel="stylesheet"/>
 
     <!-- Cards -->
     <li class="menu-item">
-      <a href="?donations" class="menu-link">
+      <a href="?orders" class="menu-link">
         <i class="menu-icon tf-icons bx bx-dollar"></i>
         <div data-i18n="Basic">Customers</div>
       </a>
     </li>
   <?php }else{ ?>
     <li class="menu-item">
-      <a href="?donations" class="menu-link">
+      <a href="?orders" class="menu-link">
         <i class="menu-icon tf-icons bx bx-dollar"></i>
-        <div data-i18n="Basic">Donations</div>
+        <div data-i18n="Basic">My Orders</div>
       </a>
     </li>
   <?php } ?> 
