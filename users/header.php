@@ -11,7 +11,21 @@
     $phone = $_SESSION['phone'];
     $userid = $_SESSION['userid'];
     $date_registered = $_SESSION['date_registered'];
+
+
+    //-------------------------real codes goes here....
+    if (isset($_POST['add_new_category_btn'])) {
+      trim(extract($_POST));
+      $cat = $dbh->query("INSERT INTO category VALUES(NULL, '$cat_name') ");
+      if ($cat) {
+          echo "<script>
+        alert('Category added sucessful');
+        window.location = '".HOME_URL."?view-category';
+        </script>";
+      }
+    }
   }
+
  ?>
 <!DOCTYPE html>
 <html
@@ -100,7 +114,7 @@ rel="stylesheet"/>
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
-          <a href="?view-banners" class="menu-link">
+          <a href="?view-category" class="menu-link">
             <div data-i18n="Notifications">View Categories</div>
           </a>
         </li>
@@ -114,7 +128,7 @@ rel="stylesheet"/>
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
-          <a href="?category" class="menu-link">
+          <a href="?products" class="menu-link">
             <div data-i18n="Basic">View Products</div>
           </a>
         </li>
@@ -267,9 +281,9 @@ rel="stylesheet"/>
   </nav>
   <!-- / Navbar -->
 <?php 
-   // include 'add-banner.php'; 
+  include 'add-product.php'; 
    // include 'add-cause.php';
-   // include 'add-category.php';
+  include 'add-category.php';
    // include 'add-team.php';
    // include 'add-blog.php';
 ?>

@@ -1,7 +1,7 @@
-<div class="modal fade"  id="add-banner">
+<div class="modal fade"  id="add-product">
   <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form method="post" action="../action" enctype="multipart/form-data">
+        <form method="post" action="" enctype="multipart/form-data">
           <div class="modal-header">
             <h4 class="modal-title" > <img src="../assets/images/kwagala.jpg" style="width: 100%;"><br>
               <center class="text-danger">Adding New Banner</center> </h4>

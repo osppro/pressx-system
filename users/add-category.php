@@ -1,10 +1,9 @@
 <div class="modal fade"  id="add-category">
   <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form method="post" action="../action" enctype="multipart/form-data">
+        <form method="post" action="" enctype="multipart/form-data">
           <div class="modal-header">
-            <h4 class="modal-title" > <img src="../assets/images/kwagala.jpg" style="width: 100%;"><br>
-              <center class="text-danger">Adding New Category</center> </h4>
+            <h4 class="modal-title" > <img src="../uploads/logoo.png" style="width: 100%;"></h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"> </i> </button>  
           </div>
         <!-- `cat_id`, `cat_name`-->

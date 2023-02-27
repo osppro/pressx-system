@@ -66,61 +66,9 @@
           </div>
         </div>
           <!--/ Basic Bootstrap Table -->
-       <?php }elseif (isset($_REQUEST['view-banners'])) { ?>
+       <?php }elseif (isset($_REQUEST['view-category'])) { ?>
         <div class="container-xxl flex-grow-1 container-p-y">
-          <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Banners</h4>
-          <!-- Basic Bootstrap Table -->
-          <a href="#add-banner" data-toggle="modal" data-backdrop="static" data-keyboard="false" class="btn btn-primary">Add New Banner</a>
-          <div class="card">
-            <h5 class="card-header">Banners</h5>
-            <div class="table-responsive text-nowrap">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>No(#)</th>
-                    <th>Title</th>
-                    <th>Photo</th>
-                    <th>Description</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody class="table-border-bottom-0">
-                <?php 
-                $users = $dbh->query("SELECT * FROM banners ORDER BY banner_id DESC ");
-                $x = 1;
-                  while ($rows = $users->fetch(PDO::FETCH_OBJ)) { ?>
-                  <!-- `banner_id`, `banner_title`, `banner_photo`, `banner_description` -->
-                    <tr>
-                      <td><?=$x++; ?></td>
-                      <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?=$rows->banner_title ?></strong></td>
-                      <td><img style="width: 100px; " src="../uploads/<?=$rows->banner_photo?>"></td>
-                      <td><?=$rows->banner_description ?></td>
-                      <td>
-                        <div class="dropdown">
-                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                            <i class="bx bx-dots-vertical-rounded"></i>
-                          </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"
-                              ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                            >
-                            <a class="dropdown-item" href="javascript:void(0);"
-                              ><i class="bx bx-trash me-1"></i> Delete</a
-                            >
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                <?php } ?>
-
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-       <?php }elseif (isset($_REQUEST['category'])) { ?>
-        <div class="container-xxl flex-grow-1 container-p-y">
-          <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Category</h4>
+          <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Categories</h4>
           <!-- Basic Bootstrap Table -->
           <a href="#add-category" data-toggle="modal" data-backdrop="static" data-keyboard="false" class="btn btn-primary">Add New Category</a>
           <div class="card">
@@ -131,29 +79,66 @@
                   <tr>
                     <th>No(#)</th>
                     <th>Category</th>
-                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
                 <?php 
-                $users = $dbh->query("SELECT * FROM category ORDER BY cat_id DESC ");
+                // `cat_id`, `cat_name`
+                $category = $dbh->query("SELECT * FROM category ");
                 $x = 1;
-                  while ($rows = $users->fetch(PDO::FETCH_OBJ)) { ?>
-                  <!--`cat_id`, `cat_name` -->
+                  while ($rows = $category->fetch(PDO::FETCH_OBJ)) { ?>
                     <tr>
                       <td><?=$x++; ?></td>
                       <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?=$rows->cat_name ?></strong></td>
-                      <td>
-                        <div class="dropdown">
-                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                            <i class="bx bx-dots-vertical-rounded"></i>
-                          </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a >
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-                          </div>
-                        </div>
-                      </td>
+                    </tr>
+                <?php } ?>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+       <?php }elseif (isset($_REQUEST['products'])) { ?>
+        <div class="container-xxl flex-grow-1 container-p-y">
+          <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Products</h4>
+          <!-- Basic Bootstrap Table -->
+          <a href="#add-product" data-toggle="modal" data-backdrop="static" data-keyboard="false" class="btn btn-primary">Add Product</a>
+          <div class="card">
+            <h5 class="card-header">Product</h5>
+            <div class="table-responsive text-nowrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>No(#)</th>
+                    <th>Category</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Front Image</th>
+                    <th>Side Image</th>
+                    <th>Back Image</th>
+                    <th>Quantity</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                <?php 
+                $pdts = $dbh->query("SELECT * FROM category c, products p WHERE c.cat_id = p.cat_id ORDER BY p.pid DESC ");
+                $x = 1;
+                  while ($rows = $pdts->fetch(PDO::FETCH_OBJ)) { ?>
+                  <!--`pid`, `cat_id`, `userid`, `pname`, `pprice`, `pfront`, `pback`, `pside`, `pqnty`, `pdesc`, `pdate_added` -->
+                    <tr>
+                      <td><?=$x++; ?></td>
+                      <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?=$rows->cat_name ?></strong></td>
+                      <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?=$rows->pname ?></strong></td>
+                      <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?=$rows->pprice ?></strong></td>
+                      <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
+                      <img src="<?=$rows->pfront; ?>"> </td>
+                      <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
+                      <img src="<?=$rows->pback; ?>"> </td>
+                      <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
+                      <img src="<?=$rows->pside; ?>"> </td>
+                      <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?=$rows->pqnty ?></strong></td>
+                      <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?=$rows->pdesc ?></strong></td>
                     </tr>
                 <?php } ?>
                 </tbody>
