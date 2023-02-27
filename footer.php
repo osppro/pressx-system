@@ -24,7 +24,7 @@
                   <ul class="footer-menu">
                      <li><a href="about">About Us</a></li>
                      <li><a href="team">Our Team</a></li>
-                     <li><a href="news">Latest News</a></li>
+                     <li><a href="products">Products</a></li>
                      <li><a href="matche">Recent Matchs</a></li>
                      <li><a href="blog">Our Blog</a></li>
                      <li><a href="contact">Contact Us</a></li>

@@ -99,7 +99,7 @@
                                        <li class="active"><a href="<?=SITE_URL; ?>">Home</a></li>
                                        <li><a href="about">About</a></li>
                                        <li><a href="team">Team</a></li>
-                                       <li><a href="news">News</a></li>
+                                       <li><a href="products">Products</a></li>
                                        <li class="dropdown mega-dropdown">
                                           <a href="match" class="dropdown-toggle" data-toggle="dropdown">Match<span class="caret"></span></a>				
                                           <ul class="dropdown-menu mega-dropdown-menu">
